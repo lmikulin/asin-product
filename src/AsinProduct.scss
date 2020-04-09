@@ -1,6 +1,9 @@
 @import 'bootstrap/scss/bootstrap';
 
-.asin-product {
-  background-color: linen;
-  // display: flex;
+.product-form {
+  width: 200px;
+}
+
+.product-details {
+  flex-grow: 1;
 }

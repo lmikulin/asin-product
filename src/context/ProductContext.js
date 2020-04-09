@@ -6,17 +6,21 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [product, setProduct] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchProduct = (db, asin) => {
+    setIsLoading(true);
+
     getProductInfo(asin, data => {
       const { product } = data;
 
       // save in context
+      setIsLoading(false);
       setProduct(product);
 
       // store in the database
       saveProduct(db, product);
-    })
+    });
   }
 
   const handleDbResult = (db, asin, data) => {
@@ -36,7 +40,8 @@ export const ProductProvider = ({ children }) => {
 
   const value = {
     product,
-    chooseProduct
+    chooseProduct,
+    isLoading
   };
 
   return <ProductContext.Provider value={value}>

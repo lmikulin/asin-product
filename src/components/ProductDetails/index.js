@@ -1,8 +1,10 @@
 import React from 'react';
 import { useProductStateValue } from '../../context/ProductContext';
 
+import './index.scss';
+
 const Breadcrumb = ({list}) => {
-  return <ol className="breadcrumb" style={{backgroundColor: 'initial', padding: '0.5rem 0'}}>
+  return <ol className="breadcrumb custom-breadcrumb">
     {list.map(({name}) => <li key={name} className="breadcrumb-item">{name}</li>)}
   </ol>
 }
@@ -42,11 +44,17 @@ const ProductPanel = ({ product }) => {
 }
 
 const ProductDetails = () => {
-  const { product } = useProductStateValue();
+  const { product, isLoading } = useProductStateValue();
 
-  return product ?
-    <ProductPanel product={product}/> :
-    <p>Product Details...</p>;
+  if (isLoading) {
+    return <div className="text-secondary mt-5">Loading...</div>;
+  }
+
+  if (product) {
+    return <ProductPanel product={product}/>
+  }
+  
+  return <div className="text-secondary mt-5">Product Details...</div>;
 }
 
 export default ProductDetails;

@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import AsinProduct from './AsinProduct';
 import { ProductProvider } from './context/ProductContext';
 import * as serviceWorker from './serviceWorker';
+
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,16 +1,17 @@
 import React from 'react';
 import ProductForm from './components/ProductForm';
 import ProductDetails from './components/ProductDetails';
+
 import './AsinProduct.scss';
 
 function AsinProduct() {
   return (
-    <div className="asin-product container-fluid">
-      <div style={{display: 'flex'}}>
-        <div style={{width: '200px'}}>
+    <div className="container-fluid">
+      <div className="d-flex">
+        <div className="product-form ml-5">
           <ProductForm />
         </div>
-        <div style={{flexGrow: '1'}}>
+        <div className="product-details ml-5">
           <ProductDetails />
         </div>
       </div>
