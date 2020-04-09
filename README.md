@@ -1,6 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Amazon ASIN Product Fetcher
+
+The <b>Amazon ASIN Product Fetcher</b> is a React application that takes an Amazon ASIN Product id and uses a third party API to get the product details.
+
+The fetched data is persisted in the browser's IndexedDB cache which provides the benefit of very quick retrieval of previously searched information, as well as fewer hits to the endpoint (which might incur a cost).
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
